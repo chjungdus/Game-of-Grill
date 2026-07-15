@@ -6,10 +6,13 @@
    ============================================================ */
 
 :root {
-  --ink:        #0c0b0a;
-  --ink-2:      #141210;
-  --ink-3:      #1d1a15;
-  --paper:      #f5f1e8;
+  --ink:        #14110c;
+  --ink-2:      #1c1812;
+  --ink-3:      #26211a;
+  --paper:      #f6f2e9;
+  --paper-2:    #efe8d9;
+  --paper-ink:  #26221b;
+  --paper-mut2: #5a5245;
   --paper-dim:  #b9b1a0;
   --paper-mute: #7c7568;
   --gold:       #c39b3f;
@@ -349,6 +352,82 @@ body::before {
   font-weight: 600; font-size: .82em; letter-spacing: .02em; }
 .legal .back { display: inline-flex; align-items: center; gap: 8px; margin-top: 3em; color: var(--gold);
   font-family: var(--serif); letter-spacing: .12em; text-transform: uppercase; font-size: .8rem; }
+
+/* ============================================================
+   HELLE SEKTIONEN (Creme) — gegen "zu viel Schwarz"
+   ============================================================ */
+.section--paper { background: var(--paper); color: var(--paper-ink); }
+.section--paper .eyebrow { color: var(--gold-deep); }
+.section--paper .eyebrow::before { background: var(--gold-deep); opacity: .75; }
+.section--paper .roman { color: var(--gold-deep); }
+.section--paper h1, .section--paper h2, .section--paper h3, .section--paper h4 { color: #1a1712; }
+.section--paper p, .section--paper .section__head p { color: var(--paper-mut2); }
+.section--paper .rule { background: linear-gradient(90deg, var(--gold-deep), transparent); }
+.section--paper .editor-quote { color: var(--gold-deep); }
+.section--paper strong { color: #2a251d; }
+
+/* About auf Creme */
+.section--paper .about__figure .tag { background: var(--ink); color: var(--paper); border-color: var(--gold); }
+.section--paper .about__figure .frame::after { box-shadow: inset 0 0 0 1px rgba(138,106,34,.35); }
+.section--paper .values { border-color: rgba(138,106,34,.28); }
+.section--paper .values .val + .val { border-color: rgba(138,106,34,.28); }
+.section--paper .values .val .num { color: var(--gold-deep); }
+.section--paper .values .val p { color: var(--paper-mut2); }
+
+/* Ledger-Speisekarte auf Creme */
+.section--paper .menu__cat .ln { background: rgba(138,106,34,.3); }
+.section--paper .menu__cat .ic { color: var(--gold-deep); }
+.section--paper .dish { border-bottom-color: rgba(138,106,34,.26); }
+.section--paper .dish__name { color: #201c15; }
+.section--paper .dish__desc { color: #6d6555; }
+.section--paper .dish__price { color: var(--gold-deep); }
+.section--paper .dish__price::before { color: var(--gold-deep); }
+.section--paper .dish__name .flag { color: var(--gold-deep); border-color: rgba(138,106,34,.45); }
+.section--paper .menu-note { color: #6a521c; background: rgba(195,155,63,.14); border-color: var(--gold-deep); }
+.section--paper .legend { color: #6d6555; border-top-color: rgba(138,106,34,.3); }
+.section--paper .legend b { color: var(--gold-deep); }
+
+/* Öffnungszeiten auf Creme */
+.section--paper .hours { border-color: rgba(138,106,34,.3); }
+.section--paper .hours__row { border-bottom-color: rgba(138,106,34,.3); }
+.section--paper .hours__row .time { color: var(--paper-mut2); }
+.section--paper .hours__row.is-open { background: rgba(195,155,63,.16); }
+.section--paper .locate { background: var(--paper-2); border-color: rgba(138,106,34,.3); }
+.section--paper .locate address { color: var(--paper-mut2); }
+.section--paper .locate a { color: var(--gold-deep); border-color: rgba(138,106,34,.35); }
+.section--paper .badge-open { color: var(--gold-deep); }
+
+.more-link { display: inline-flex; align-items: center; gap: 10px; font-family: var(--serif);
+  letter-spacing: .14em; text-transform: uppercase; font-size: .82rem; padding-bottom: 6px; }
+.section--paper .more-link { color: var(--gold-deep); border-bottom: 1px solid rgba(138,106,34,.4); }
+.section .more-link { color: var(--gold); border-bottom: 1px solid var(--line); }
+
+/* ============================================================
+   FOTO-BAND (Signature Feature) — grosses Bild statt nur Text
+   ============================================================ */
+.feature { position: relative; display: grid; align-items: center;
+  min-height: clamp(420px, 62vh, 620px); padding: clamp(56px,9vw,110px) 0; overflow: hidden; }
+.feature__img { position: absolute; inset: 0; background-size: cover; background-position: center;
+  transform: scale(1.04); }
+.feature::after { content: ""; position: absolute; inset: 0;
+  background: linear-gradient(100deg, rgba(12,10,8,.94) 12%, rgba(12,10,8,.62) 52%, rgba(12,10,8,.34)); }
+.feature .wrap { position: relative; z-index: 2; }
+.feature .eyebrow { color: var(--gold-hi); }
+.feature__card { max-width: 560px; }
+.feature h2 { font-size: clamp(2.1rem, 5.4vw, 3.8rem); text-transform: uppercase; letter-spacing: .02em; line-height: 1; }
+.feature p { color: var(--paper-dim); margin: 1.1rem 0 1.6rem; max-width: 46ch; }
+.feature__price { display: inline-flex; align-items: baseline; gap: 12px;
+  border: 1px solid var(--gold); padding: 12px 20px; }
+.feature__price .lbl { font-family: var(--serif); letter-spacing: .16em; text-transform: uppercase; font-size: .7rem; color: var(--gold); }
+.feature__price .amt { font-family: var(--serif); font-size: 1.5rem; color: var(--gold-hi); }
+.feature__price .amt small { font-size: .6em; color: var(--gold); }
+
+/* Dekor-Grafik im Karten-Teaser (Wappen-Wasserzeichen) */
+.menu-deco { position: relative; }
+.menu-deco__mark { position: absolute; right: -10px; top: -30px; width: min(240px, 34vw);
+  opacity: .12; pointer-events: none; z-index: 0; }
+.section--paper .menu-deco__mark { opacity: .16; }
+.menu-deco > * { position: relative; z-index: 1; }
 
 /* ============================================================
    Reveal-on-scroll
