@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 250" role="img" aria-label="Game of Grill — drei gekreuzte Schwerter über zwei Flammen">
+  <defs>
+    <linearGradient id="gogGold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e9cd7c"/>
+      <stop offset="0.5" stop-color="#c39b3f"/>
+      <stop offset="1" stop-color="#8a6a22"/>
+    </linearGradient>
+    <g id="gog-sword" fill="url(#gogGold)" stroke="#5f4a17" stroke-width="1" stroke-linejoin="round">
+      <circle cx="120" cy="44" r="5.2"/>
+      <rect x="118.4" y="49" width="3.2" height="18" rx="1.4"/>
+      <rect x="102" y="65.5" width="36" height="4.2" rx="2.1"/>
+      <path d="M114 72 L126 72 L120.7 197 L119.3 197 Z"/>
+      <line x1="120" y1="80" x2="120" y2="189" stroke="#5f4a17" stroke-width="0.8"/>
+    </g>
+    <g id="gog-brazier" fill="url(#gogGold)" stroke="#5f4a17" stroke-width="1" stroke-linejoin="round">
+      <path d="M-16 12 L16 12 L10.5 23 L-10.5 23 Z"/>
+      <path d="M-9 12 C-13 4 -6 2 -8 -6 C-2 -1 2 -3 1 -12 C6 -4 12 -2 9 8 C8 11 5 12 -9 12 Z"/>
+    </g>
+  </defs>
+  <use href="#gog-sword" transform="rotate(40 120 132)"/>
+  <use href="#gog-sword" transform="rotate(-40 120 132)"/>
+  <use href="#gog-sword"/>
+  <use href="#gog-brazier" transform="translate(58 206)"/>
+  <use href="#gog-brazier" transform="translate(182 206)"/>
+</svg>

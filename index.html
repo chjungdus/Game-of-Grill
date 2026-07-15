@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game of Grill — Burger, Pizza & Grill | Aladdin's Küche</title>
+  <meta name="description" content="Game of Grill: handgemachte Burger, neapolitanische Pizza, Sandwiches, Pasta & Grillspezialitäten. Täglich frisch von Inhaber Aladdin. Öffnungszeiten 11:00–23:30 Uhr.">
+  <meta name="theme-color" content="#0c0b0a">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="canonical" href="https://www.game-of-grill.de/">
+
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="restaurant.restaurant">
+  <meta property="og:title" content="Game of Grill — Burger, Pizza & Grill">
+  <meta property="og:description" content="Handgemachte Burger, Pizza & Grillspezialitäten. Täglich 11:00–23:30 Uhr.">
+  <meta property="og:image" content="images/poster-dragon-food.jpg">
+  <meta property="og:locale" content="de_DE">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- SEO: strukturierte Daten -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "Game of Grill",
+    "servesCuisine": ["Burger", "Pizza", "Grill", "Sandwiches", "Pasta"],
+    "priceRange": "€€",
+    "image": "images/poster-dragon-food.jpg",
+    "url": "https://www.game-of-grill.de/",
+    "email": "PLATZHALTER@game-of-grill.de",
+    "founder": "Aladdin",
+    "openingHoursSpecification": [{
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+      "opens": "11:00", "closes": "23:30"
+    }],
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "PLATZHALTER Straße & Hausnummer",
+      "postalCode": "PLZ",
+      "addressLocality": "Ort",
+      "addressCountry": "DE"
+    }
+  }
+  </script>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <a class="nav__brand" href="index.html" aria-label="Game of Grill Startseite">
+    <img src="assets/emblem.svg" alt="" width="34" style="display:block">
+    <b>Game <span>of</span> Grill</b>
+  </a>
+  <nav class="nav__links" id="navLinks" aria-label="Hauptnavigation">
+    <a href="#ueber">Über uns</a>
+    <a href="speisekarte.html">Speisekarte</a>
+    <a href="#galerie">Galerie</a>
+    <a href="#besuch">Besuch</a>
+  </nav>
+  <button class="nav__burger" id="burger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="navLinks">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" aria-label="Willkommen bei Game of Grill">
+  <div class="hero__bg" aria-hidden="true"
+       style="position:absolute;inset:0;background:url('images/pizza-fire.jpg') center/cover no-repeat;opacity:.16;filter:grayscale(.2) contrast(1.05)"></div>
+  <div class="hero__grid-lines" aria-hidden="true"></div>
+
+  <div class="hero__inner">
+    <div class="hero__copy">
+      <p class="eyebrow hero__kicker">Aladdin&rsquo;s Küche &middot; Est.</p>
+      <h1>
+        <span class="fill">Game</span>
+        <span class="of">of</span>
+        Grill
+      </h1>
+      <p class="hero__lede">Wo Feuer auf Handwerk trifft. Saftige Burger, im Steinofen gebackene Pizza und Grillspezialitäten &mdash; jeden Tag frisch zubereitet. Nimm Platz an der Tafel.</p>
+
+      <dl class="hero__meta">
+        <div><dt>Spezialität</dt><dd>Game of Grill Burger</dd></div>
+        <div><dt>Küche</dt><dd>Burger &middot; Pizza &middot; Grill</dd></div>
+        <div><dt>Täglich</dt><dd>11:00 &ndash; 23:30 Uhr</dd></div>
+      </dl>
+    </div>
+
+    <!-- Animiertes Wappen: Schwerter fächern auf, Flammen flackern, Glut steigt -->
+    <div class="hero__crest" aria-hidden="true">
+      <canvas id="embers"></canvas>
+      <svg viewBox="0 0 240 250" class="crest-draw">
+        <defs>
+          <linearGradient id="hGold" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#e9cd7c"/><stop offset=".5" stop-color="#c39b3f"/><stop offset="1" stop-color="#8a6a22"/>
+          </linearGradient>
+          <g id="hero-sword" fill="url(#hGold)" stroke="#5f4a17" stroke-width="1" stroke-linejoin="round">
+            <circle cx="120" cy="44" r="5.2"/>
+            <rect x="118.4" y="49" width="3.2" height="18" rx="1.4"/>
+            <rect x="102" y="65.5" width="36" height="4.2" rx="2.1"/>
+            <path d="M114 72 L126 72 L120.7 197 L119.3 197 Z"/>
+            <line x1="120" y1="80" x2="120" y2="189" stroke="#5f4a17" stroke-width=".8"/>
+          </g>
+          <g id="hero-brazier" fill="url(#hGold)" stroke="#5f4a17" stroke-width="1" stroke-linejoin="round">
+            <path d="M-16 12 L16 12 L10.5 23 L-10.5 23 Z"/>
+            <path class="flame-flicker" d="M-9 12 C-13 4 -6 2 -8 -6 C-2 -1 2 -3 1 -12 C6 -4 12 -2 9 8 C8 11 5 12 -9 12 Z"/>
+          </g>
+        </defs>
+
+        <use href="#hero-sword" opacity="0">
+          <animate attributeName="opacity" from="0" to="1" dur=".5s" begin=".15s" fill="freeze"/>
+        </use>
+        <use href="#hero-sword" opacity="0">
+          <animate attributeName="opacity" from="0" to="1" dur=".4s" begin=".45s" fill="freeze"/>
+          <animateTransform attributeName="transform" type="rotate" from="0 120 132" to="-40 120 132"
+            dur=".9s" begin=".45s" fill="freeze" calcMode="spline" keyTimes="0;1" keySplines=".2 .7 .2 1"/>
+        </use>
+        <use href="#hero-sword" opacity="0">
+          <animate attributeName="opacity" from="0" to="1" dur=".4s" begin=".45s" fill="freeze"/>
+          <animateTransform attributeName="transform" type="rotate" from="0 120 132" to="40 120 132"
+            dur=".9s" begin=".45s" fill="freeze" calcMode="spline" keyTimes="0;1" keySplines=".2 .7 .2 1"/>
+        </use>
+        <use href="#hero-brazier" transform="translate(58 206)" opacity="0">
+          <animate attributeName="opacity" from="0" to="1" dur=".6s" begin="1.1s" fill="freeze"/>
+        </use>
+        <use href="#hero-brazier" transform="translate(182 206)" opacity="0">
+          <animate attributeName="opacity" from="0" to="1" dur=".6s" begin="1.25s" fill="freeze"/>
+        </use>
+      </svg>
+    </div>
+  </div>
+
+  <div class="scroll-cue" aria-hidden="true">Scroll<span></span></div>
+</section>
+
+<!-- ============ MARQUEE ============ -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee__track">
+    <span>Handgemacht&nbsp;&nbsp; Steinofen-Pizza&nbsp;&nbsp; Double-Patty-Burger&nbsp;&nbsp; Frisch gegrillt&nbsp;&nbsp; Hausgemachte Saucen&nbsp;&nbsp;</span>
+    <span>Handgemacht&nbsp;&nbsp; Steinofen-Pizza&nbsp;&nbsp; Double-Patty-Burger&nbsp;&nbsp; Frisch gegrillt&nbsp;&nbsp; Hausgemachte Saucen&nbsp;&nbsp;</span>
+  </div>
+</div>
+
+<!-- ============ ÜBER UNS ============ -->
+<section class="section" id="ueber">
+  <div class="wrap">
+    <div class="about">
+      <div class="about__body reveal">
+        <p class="eyebrow"><span class="roman">I</span> &nbsp;Über uns</p>
+        <h2>Ein Königreich für Grillfans</h2>
+        <p class="editor-quote">&bdquo;Bei uns wird nicht gekämpft &mdash; bei uns wird gegrillt.&ldquo;</p>
+        <p>Game of Grill ist die Idee von Inhaber <strong>Aladdin</strong>: ein Ort, an dem Streetfood auf Handwerk trifft. Unsere Rindfleisch-Patties werden in Sojasauce und Honig mariniert, unsere Pizza kommt nach italienischer Art auf den Teller, und die Saucen rühren wir selbst an. Drei gekreuzte Schwerter, zwei Flammen &mdash; unser Zeichen für ehrliches Essen mit Charakter.</p>
+        <p>Ob schneller Mittagsbiss oder ausgedehntes Abendessen mit Freunden: Nimm Platz, lehn dich zurück und lass dich verwöhnen.</p>
+      </div>
+      <div class="about__figure reveal">
+        <div class="frame">
+          <img src="images/interior.jpg" alt="Gemütlicher Gastraum von Game of Grill mit Holztischen, dunklen Wänden und beleuchtetem Logo-Schild">
+        </div>
+        <div class="tag">Inhaber<b>Aladdin</b></div>
+      </div>
+    </div>
+
+    <div class="values reveal">
+      <div class="val"><div class="num">01</div><h3>Handwerk</h3><p>Patties, Teig und Saucen &mdash; frisch und von Hand zubereitet.</p></div>
+      <div class="val"><div class="num">02</div><h3>Feuer</h3><p>Gegrillt und im Ofen gebacken. Rauch, Röstaromen, Charakter.</p></div>
+      <div class="val"><div class="num">03</div><h3>Vielfalt</h3><p>Von Burger über Pizza bis Pasta &mdash; für jeden etwas.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SPEISEKARTE-TEASER ============ -->
+<section class="section section--ink2 cut-top" id="karte">
+  <div class="wrap">
+    <div class="section__head reveal">
+      <p class="eyebrow"><span class="roman">II</span> &nbsp;Speisekarte</p>
+      <h2>Aus der Küche</h2>
+      <p>Ein Auszug von der Tafel. Die vollständige Karte mit allen Burgern, Pizzen, Sandwiches, Salaten und Pasta findest du auf der Speisekarten-Seite.</p>
+      <div class="rule"></div>
+    </div>
+
+    <div class="menu reveal">
+      <div class="menu__col">
+        <div class="menu__cat"><h3>Signature Burger</h3><span class="ln"></span></div>
+        <div class="dish">
+          <div class="dish__name">Game of Grill Burger <span class="flag">Hausspezialität</span>
+            <p class="dish__desc">Double Patty, mariniert in Soja &amp; Honig, Avocado-Apfel-Sauce, gegrilltes Gemüse.</p></div>
+          <div class="dish__price">13,90</div>
+        </div>
+        <div class="dish">
+          <div class="dish__name">King&rsquo;s Burger
+            <p class="dish__desc">Rindfleisch-Patty, Cheddar, knuspriger Bacon, BBQ-Sauce, Salat, Tomaten.</p></div>
+          <div class="dish__price">10,90</div>
+        </div>
+        <div class="dish">
+          <div class="dish__name">Dragon Fire Burger <span class="flag">scharf</span>
+            <p class="dish__desc">Pepper-Jack-Käse, Jalapeños, scharfe Chili-Sauce, Rucola, Zwiebeln.</p></div>
+          <div class="dish__price">10,90</div>
+        </div>
+      </div>
+
+      <div class="menu__col">
+        <div class="menu__cat"><h3>Pizza &amp; mehr</h3><span class="ln"></span></div>
+        <div class="dish">
+          <div class="dish__name">Pizza Margherita
+            <p class="dish__desc">Tomatensoße, italienischer Mozzarella, Basilikum.</p></div>
+          <div class="dish__price">10,00</div>
+        </div>
+        <div class="dish">
+          <div class="dish__name">Trüffel Burger
+            <p class="dish__desc">Emmentaler, Pilze, Trüffel-Sauce, Rucola, Parmesan.</p></div>
+          <div class="dish__price">13,90</div>
+        </div>
+        <div class="dish">
+          <div class="dish__name">Steak Philadelphia Baguette
+            <p class="dish__desc">Gegrilltes Rindfleisch, Käse, süße Paprika im Baguette.</p></div>
+          <div class="dish__price">11,90</div>
+        </div>
+      </div>
+    </div>
+
+    <p style="margin-top:38px">
+      <a href="speisekarte.html" class="legal-back" style="display:inline-flex;align-items:center;gap:10px;font-family:var(--serif);letter-spacing:.14em;text-transform:uppercase;font-size:.82rem;color:var(--gold);border-bottom:1px solid var(--line);padding-bottom:6px">
+        Zur vollständigen Speisekarte &rarr;
+      </a>
+    </p>
+  </div>
+</section>
+
+<!-- ============ GALERIE ============ -->
+<section class="section" id="galerie">
+  <div class="wrap">
+    <div class="section__head reveal">
+      <p class="eyebrow"><span class="roman">III</span> &nbsp;Galerie</p>
+      <h2>Schau dich um</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="gallery reveal">
+      <figure><img src="images/poster-dragon-food.jpg" alt="Game of Grill Werbeplakat mit Drache über einer Auswahl an Onion Rings, Nachos, Fish &amp; Chips und Chicken Wings"><figcaption>Die Auswahl</figcaption></figure>
+      <figure><img src="images/pizza-fire.jpg" alt="Frisch gebackene Pizza mit Salami, Oliven und Basilikum vor Flammen und mittelalterlicher Stadtkulisse"><figcaption>Pizza aus dem Ofen</figcaption></figure>
+      <figure><img src="images/dragon-logo.jpg" alt="Illustriertes Game of Grill Drachen-Logo mit Grillbesteck, Flammen und Schriftbanner"><figcaption>Unser Drache</figcaption></figure>
+      <figure><img src="images/wall-art-worldmap.jpg" alt="Goldene Weltkarten-Wandkunst auf Glas im Gastraum von Game of Grill"><figcaption>Details im Laden</figcaption></figure>
+      <figure><img src="images/emblem-sign.jpg" alt="Wappenschild mit drei gekreuzten Schwertern und Flammen sowie Schriftzug Game of Grill Burgers Pizza Fries"><figcaption>Das Wappen</figcaption></figure>
+      <figure><img src="images/storefront-sign.jpg" alt="Außenschild von Game of Grill an der Fassade mit Schwerter-Wappen und Schriftzug"><figcaption>Vor der Tür</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BESUCH / STANDORT ============ -->
+<section class="section section--ink2 cut-top" id="besuch">
+  <div class="wrap">
+    <div class="section__head reveal">
+      <p class="eyebrow"><span class="roman">IV</span> &nbsp;Besuch uns</p>
+      <h2>Öffnungszeiten &amp; Standort</h2>
+      <div class="rule"></div>
+    </div>
+
+    <div class="info reveal">
+      <div class="hours">
+        <div class="hours__row" data-day="1"><span class="day">Montag</span><span class="time">11:00 – 23:30</span></div>
+        <div class="hours__row" data-day="2"><span class="day">Dienstag</span><span class="time">11:00 – 23:30</span></div>
+        <div class="hours__row" data-day="3"><span class="day">Mittwoch</span><span class="time">11:00 – 23:30</span></div>
+        <div class="hours__row" data-day="4"><span class="day">Donnerstag</span><span class="time">11:00 – 23:30</span></div>
+        <div class="hours__row" data-day="5"><span class="day">Freitag</span><span class="time">11:00 – 23:30</span></div>
+        <div class="hours__row" data-day="6"><span class="day">Samstag</span><span class="time">11:00 – 23:30</span></div>
+        <div class="hours__row" data-day="0"><span class="day">Sonntag</span><span class="time">11:00 – 23:30</span></div>
+      </div>
+
+      <div class="locate">
+        <span class="badge-open" id="openBadge"><span class="dot"></span><span id="openText">Öffnungszeiten prüfen</span></span>
+        <h3>So findest du uns</h3>
+        <address>
+          <strong>Game of Grill</strong><br>
+          <span style="color:var(--gold-deep)">PLATZHALTER</span> &mdash; Straße &amp; Hausnummer<br>
+          <span style="color:var(--gold-deep)">PLZ</span> Ort<br><br>
+          Tel.: <span style="color:var(--gold-deep)">PLATZHALTER</span><br>
+          E-Mail: <a href="mailto:PLATZHALTER@game-of-grill.de">PLATZHALTER@game-of-grill.de</a>
+        </address>
+        <p style="color:var(--paper-mute);font-size:.84rem;margin:6px 0 0">Reine Info-Seite &mdash; keine Online-Bestellung. Wir freuen uns auf deinen Besuch vor Ort.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <img src="assets/emblem.svg" alt="Game of Grill Wappen">
+        <b>Game of Grill</b>
+        <p>Burger &middot; Pizza &middot; Grill. Handgemacht von Aladdin. Wo Feuer auf Handwerk trifft.</p>
+      </div>
+      <div>
+        <h4>Entdecken</h4>
+        <ul>
+          <li><a href="#ueber">Über uns</a></li>
+          <li><a href="speisekarte.html">Speisekarte</a></li>
+          <li><a href="#galerie">Galerie</a></li>
+          <li><a href="#besuch">Öffnungszeiten</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Rechtliches</h4>
+        <ul>
+          <li><a href="impressum.html">Impressum</a></li>
+          <li><a href="datenschutz.html">Datenschutz</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__base">
+      <span>&copy; <span id="year">2026</span> Game of Grill &middot; Inhaber Aladdin</span>
+      <span>Täglich 11:00 &ndash; 23:30 Uhr</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
