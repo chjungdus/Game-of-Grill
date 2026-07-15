@@ -34,8 +34,9 @@ Gold markierte Stellen bzw. `PLATZHALTER` ersetzen:
 - **Impressum:** vollständiger Name, Anschrift, Telefon, E-Mail, USt-IdNr., Aufsichtsbehörde
 - **Datenschutz:** verantwortliche Stelle, Hoster, ggf. Google-Fonts-Self-Hosting
 - **Standort/Kontakt** auf der Startseite (Adresse, Telefon, E-Mail)
-- **Speisekarte:** Preise &amp; Allergen-Legende gegenprüfen; **Sides &amp; Getränke** ergänzen
-- **Öffnungszeiten** bestätigt: täglich 11:00–23:30 (bitte prüfen)
+- **Speisekarte:** nur **Sides &amp; Getränke** fehlen noch (auf den Foto-Karten nicht enthalten); Allergen-Legende gegenprüfen
+
+Bereits von den Fotos übernommen (fertig, kein Platzhalter): **Öffnungszeiten** (täglich 11:00–23:30) und die **komplette Speisekarte**.
 
 ## Design-Prinzipien (bewusst nicht generisch)
 - Kein durchgehendes Card-Grid — Speisekarte als „Menü-Rolle", Galerie als Masonry mit schrägen Rahmen
