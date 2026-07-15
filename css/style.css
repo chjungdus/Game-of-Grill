@@ -474,6 +474,42 @@ body::before {
 .feature__statement span { color: var(--gold-hi); display: block; }
 
 /* ============================================================
+   KUNDENSTIMMEN
+   ============================================================ */
+.quotes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 8px; }
+.quote { position: relative; padding: 40px 26px 26px; border: 1px solid var(--line);
+  background: linear-gradient(180deg, rgba(195,155,63,.06), transparent);
+  clip-path: polygon(0 0, 100% 2.5%, 100% 100%, 0 97.5%); }
+.quote:nth-child(2) { transform: translateY(24px); }
+.quote:nth-child(3) { transform: translateY(-8px); }
+.quote .qmark { position: absolute; top: 2px; left: 18px; font-family: var(--editor);
+  font-size: 4.6rem; line-height: 1; color: var(--gold); opacity: .5; }
+.quote p { position: relative; margin: 10px 0 16px; color: var(--paper);
+  font-family: var(--editor); font-size: 1.24rem; font-style: italic; line-height: 1.5; }
+.quote .stars { color: var(--gold); letter-spacing: 3px; font-size: .82rem; }
+.quote cite { display: block; margin-top: 10px; font-family: var(--serif); font-style: normal;
+  letter-spacing: .12em; text-transform: uppercase; font-size: .72rem; color: var(--gold); }
+
+/* ============================================================
+   FAQ — natives Accordion (details/summary), ohne JS
+   ============================================================ */
+.faq { border-top: 1px solid var(--line); margin-top: 8px; }
+.section--paper .faq { border-color: rgba(138,106,34,.28); }
+.faq details { border-bottom: 1px solid var(--line); }
+.section--paper .faq details { border-color: rgba(138,106,34,.28); }
+.faq summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between;
+  align-items: center; gap: 20px; padding: 22px 0;
+  font-family: var(--serif); font-size: 1.06rem; letter-spacing: .01em; transition: color .2s; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; font-family: var(--serif); font-size: 1.5rem; line-height: 1;
+  color: var(--gold); flex: none; transition: transform .3s ease; }
+.section--paper .faq summary::after { color: var(--gold-deep); }
+.faq details[open] summary::after { content: "\2013"; }
+.faq details[open] summary { color: var(--gold-deep); }
+.faq summary:hover { color: var(--gold); }
+.faq__a { padding: 0 0 24px; max-width: 66ch; }
+
+/* ============================================================
    Reveal-on-scroll
    ============================================================ */
 .reveal { opacity: 0; transform: translateY(26px); transition: opacity .8s ease, transform .8s cubic-bezier(.2,.7,.2,1); }
@@ -526,6 +562,8 @@ body::before {
   .cat + .cat { border-left: 0; }
   .cat:nth-child(odd) { border-right: 1px solid rgba(138,106,34,.28); }
   .feature__card, .feature__statement { max-width: none; }
+  .quotes { grid-template-columns: 1fr; gap: 16px; }
+  .quote, .quote:nth-child(2), .quote:nth-child(3) { transform: none; }
 }
 @media (max-width: 560px) {
   .gallery { columns: 1; column-gap: 0; }

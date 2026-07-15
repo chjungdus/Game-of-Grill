@@ -14,7 +14,7 @@ bei Bedarf professionell bearbeitet über Adobe/Cloudinary.
 |----------------------|-------------------------------------|
 | `hero-*.jpg`         | Kandidaten für das große Hero-Bild  |
 | `laden-*.jpg`        | Innenraum / Theke / Außenansicht    |
-| `team-*.jpg`         | Aladdin & Team (für „Über uns")     |
+| `team-*.jpg`         | Hani & Team (für „Über uns")     |
 | `essen-*.jpg`        | Sandwiches & Gerichte (Galerie)     |
 | `detail-*.jpg`       | Nahaufnahmen, Zutaten, Grill        |
 

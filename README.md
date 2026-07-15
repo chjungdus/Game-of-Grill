@@ -1,13 +1,14 @@
 # Game of Grill — Website
 
 Statische Website (HTML · CSS · JS, ohne Framework) für den Burger- &amp; Grill-Laden
-**Game of Grill** (Inhaber: Aladdin). Schwarz · Weiß · Dunkelgold, heraldisches
+**Game of Grill** (Inhaber: Hani). Schwarz · Weiß · Dunkelgold, heraldisches
 Design (drei Schwerter + Flammen) nach den echten Ladenschildern.
 
 ## Struktur
 ```
 Game-of-Grill/
-├── index.html            Startseite (Hero, Über uns, Karten-Teaser, Galerie, Besuch)
+├── index.html            Startseite (Hero, Über uns, Foto-Bänder, Speisekarte+Kategorien,
+│                         Galerie, Kundenstimmen, FAQ, Besuch)
 ├── speisekarte.html      Vollständige Speisekarte (von den Fotos übertragen)
 ├── impressum.html        Impressum (mit Platzhaltern)
 ├── datenschutz.html      Datenschutzerklärung (DSGVO, mit Platzhaltern)
