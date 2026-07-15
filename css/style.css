@@ -397,6 +397,13 @@ body::before {
 .section--paper .locate a { color: var(--gold-deep); border-color: rgba(138,106,34,.35); }
 .section--paper .badge-open { color: var(--gold-deep); }
 
+.map-btn { display: inline-flex; align-items: center; gap: 10px; margin-top: 6px;
+  font-family: var(--serif); letter-spacing: .14em; text-transform: uppercase; font-size: .78rem;
+  color: var(--ink); background: var(--gold); padding: 12px 20px;
+  clip-path: polygon(0 0, 100% 0, 92% 100%, 0 100%); transition: background .25s, transform .25s; }
+.map-btn:hover { background: var(--gold-hi); transform: translateX(3px); }
+.map-btn svg { width: 16px; height: 16px; }
+
 .more-link { display: inline-flex; align-items: center; gap: 10px; font-family: var(--serif);
   letter-spacing: .14em; text-transform: uppercase; font-size: .82rem; padding-bottom: 6px; }
 .section--paper .more-link { color: var(--gold-deep); border-bottom: 1px solid rgba(138,106,34,.4); }
