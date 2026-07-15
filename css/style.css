@@ -404,6 +404,13 @@ body::before {
 .map-btn:hover { background: var(--gold-hi); transform: translateX(3px); }
 .map-btn svg { width: 16px; height: 16px; }
 
+.map-embed { margin-top: 30px; position: relative; border: 1px solid var(--line); }
+.map-embed iframe { width: 100%; height: 400px; border: 0; display: block; }
+.map-embed::before, .map-embed::after { content: ""; position: absolute; width: 22px; height: 22px; z-index: 2; pointer-events: none; }
+.map-embed::before { top: 8px; left: 8px; border-top: 2px solid var(--gold); border-left: 2px solid var(--gold); }
+.map-embed::after { bottom: 8px; right: 8px; border-bottom: 2px solid var(--gold); border-right: 2px solid var(--gold); }
+@media (max-width: 560px) { .map-embed iframe { height: 300px; } }
+
 .more-link { display: inline-flex; align-items: center; gap: 10px; font-family: var(--serif);
   letter-spacing: .14em; text-transform: uppercase; font-size: .82rem; padding-bottom: 6px; }
 .section--paper .more-link { color: var(--gold-deep); border-bottom: 1px solid rgba(138,106,34,.4); }
