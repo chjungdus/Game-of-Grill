@@ -430,6 +430,50 @@ body::before {
 .menu-deco > * { position: relative; z-index: 1; }
 
 /* ============================================================
+   HERO-FOTO-Ebene
+   ============================================================ */
+.hero__photo { position: absolute; inset: 0; z-index: 0;
+  background-size: cover; background-position: center; opacity: .44;
+  filter: contrast(1.03) saturate(1.06); }
+.hero::after { content: ""; position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(100deg, rgba(20,17,12,.93) 16%, rgba(20,17,12,.5) 56%, rgba(20,17,12,.82)); }
+.hero .hero__grid-lines { z-index: 1; }
+.hero .hero__inner { z-index: 3; }
+.hero .scroll-cue { z-index: 4; }
+
+/* ============================================================
+   KATEGORIEN — eigene SVG-Icons statt generischer Cards
+   ============================================================ */
+.cats { display: grid; grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); margin-top: 8px; }
+.section--paper .cats { border-color: rgba(138,106,34,.28); }
+.cat { padding: 28px 24px; position: relative; }
+.cat + .cat { border-left: 1px solid var(--line); }
+.section--paper .cat + .cat { border-left-color: rgba(138,106,34,.28); }
+.cat__ic { width: 46px; height: 46px; margin-bottom: 14px; color: var(--gold); }
+.section--paper .cat__ic { color: var(--gold-deep); }
+.cat h3 { font-size: 1.06rem; text-transform: uppercase; letter-spacing: .05em; margin: 0 0 5px; }
+.cat .from { font-family: var(--serif); color: var(--gold); font-size: .78rem; letter-spacing: .1em; text-transform: uppercase; }
+.section--paper .cat .from { color: var(--gold-deep); }
+.cat p { font-size: .86rem; margin: 8px 0 0; color: var(--paper-dim); }
+.section--paper .cat p { color: var(--paper-mut2); }
+.cat::after { content: ""; position: absolute; left: 0; bottom: -1px; height: 2px; width: 0;
+  background: var(--gold); transition: width .4s ease; }
+.cat:hover::after { width: 100%; }
+
+/* Galerie auch auf Creme möglich */
+.section--paper .gallery figure { border-color: rgba(138,106,34,.32); }
+.section--paper .gallery figure::before, .section--paper .gallery figure::after { border-color: var(--gold-deep); }
+.section--paper .gallery figcaption { background: rgba(20,17,12,.72); color: var(--paper); }
+
+/* zweites Feature-Band: Text/Bild-Seite variabel */
+.feature--right .feature__img { background-position: right center; }
+.feature--right::after { background: linear-gradient(260deg, rgba(20,17,12,.9) 16%, rgba(20,17,12,.5) 56%, rgba(20,17,12,.8)); }
+.feature__statement { font-family: var(--serif); font-size: clamp(1.8rem,4.4vw,3rem);
+  text-transform: uppercase; line-height: 1.08; }
+.feature__statement span { color: var(--gold-hi); display: block; }
+
+/* ============================================================
    Reveal-on-scroll
    ============================================================ */
 .reveal { opacity: 0; transform: translateY(26px); transition: opacity .8s ease, transform .8s cubic-bezier(.2,.7,.2,1); }
@@ -477,6 +521,11 @@ body::before {
   .dish { grid-template-columns: 1fr auto; gap: 4px 14px; }
   .values .val { padding: 24px 20px; }
   .gallery figcaption { opacity: 1; transform: none; } /* auf Touch immer sichtbar */
+  .cats { grid-template-columns: 1fr 1fr; }
+  .cat { border-top: 1px solid rgba(138,106,34,.28); }
+  .cat + .cat { border-left: 0; }
+  .cat:nth-child(odd) { border-right: 1px solid rgba(138,106,34,.28); }
+  .feature__card, .feature__statement { max-width: none; }
 }
 @media (max-width: 560px) {
   .gallery { columns: 1; column-gap: 0; }
