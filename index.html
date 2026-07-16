@@ -136,6 +136,26 @@
     </div>
   </div>
 
+  <div class="hero__fire-glow" aria-hidden="true"></div>
+  <div class="hero__fire" aria-hidden="true">
+    <svg viewBox="0 0 1200 150" preserveAspectRatio="none">
+      <defs>
+        <linearGradient id="fireGrad" x1="0" y1="1" x2="0" y2="0">
+          <stop offset="0" stop-color="#ff6a12"/>
+          <stop offset=".45" stop-color="#ffab34"/>
+          <stop offset="1" stop-color="#ffe08a" stop-opacity="0"/>
+        </linearGradient>
+        <filter id="fireTurb" x="-20%" y="-50%" width="140%" height="200%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.012 0.028" numOctaves="2" seed="7" result="n">
+            <animate attributeName="baseFrequency" dur="5s" values="0.012 0.028;0.021 0.052;0.012 0.028" repeatCount="indefinite"/>
+          </feTurbulence>
+          <feDisplacementMap in="SourceGraphic" in2="n" scale="40" xChannelSelector="R" yChannelSelector="G"/>
+        </filter>
+      </defs>
+      <path filter="url(#fireTurb)" fill="url(#fireGrad)"
+        d="M0 150 L0 94 Q100 44 200 76 T400 70 T600 58 T800 76 T1000 64 T1200 76 L1200 150 Z"/>
+    </svg>
+  </div>
   <div class="scroll-cue" aria-hidden="true">Scroll<span></span></div>
 </section>
 
