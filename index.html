@@ -94,6 +94,8 @@
 
     <!-- Animiertes Wappen: Schwerter fächern auf, Flammen flackern, Glut steigt -->
     <div class="hero__crest" aria-hidden="true">
+      <span class="hero__flare"></span>
+      <span class="smoke s1"></span><span class="smoke s2"></span><span class="smoke s3"></span>
       <canvas id="embers"></canvas>
       <svg viewBox="0 0 240 250" class="crest-draw">
         <defs>
@@ -197,6 +199,7 @@
 <!-- ============ FOTO-BAND: SIGNATURE ============ -->
 <section class="feature" aria-label="Hausspezialität: Game of Grill Burger">
   <div class="feature__img" style="background-image:url('images/burger-board.jpg'); background-position:center right" aria-hidden="true"></div>
+  <canvas class="feature__embers" aria-hidden="true"></canvas>
   <div class="wrap">
     <div class="feature__card reveal">
       <p class="eyebrow">Die Hausspezialität</p>
@@ -302,6 +305,7 @@
 <!-- ============ MARKEN-BILDBAND ============ -->
 <section class="feature feature--right" aria-label="Unser Zeichen">
   <div class="feature__img" style="background-image:url('images/dragon-logo.jpg')" aria-hidden="true"></div>
+  <canvas class="feature__embers" aria-hidden="true"></canvas>
   <div class="wrap">
     <div class="feature__card reveal">
       <p class="eyebrow">Unser Zeichen</p>

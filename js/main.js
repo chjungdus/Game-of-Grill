@@ -70,12 +70,12 @@
     if (row && isOpen) row.classList.add('is-open');
   })();
 
-  /* ---- Hero: aufsteigende Glut (Canvas) ---- */
-  var canvas = document.getElementById('embers');
-  if (canvas && !reduce) {
+  /* ---- Aufsteigende Glut (Canvas) — Hero + Foto-Bänder ---- */
+  function initEmbers(canvas, mode) {
     var ctx = canvas.getContext('2d');
     var W = 0, H = 0, dpr = Math.min(window.devicePixelRatio || 1, 2);
     var parts = [];
+    var cap = mode === 'wide' ? 60 : 46;
 
     function size() {
       var r = canvas.getBoundingClientRect();
@@ -84,9 +84,11 @@
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     }
     function spawn() {
+      var x, y;
+      if (mode === 'wide') { x = W * Math.random(); y = H * (0.82 + Math.random() * 0.16); }
+      else { x = W * (0.32 + Math.random() * 0.36); y = H * (0.62 + Math.random() * 0.2); }
       return {
-        x: W * (0.32 + Math.random() * 0.36),
-        y: H * (0.62 + Math.random() * 0.2),
+        x: x, y: y,
         r: 0.6 + Math.random() * 1.8,
         vy: 0.3 + Math.random() * 0.9,
         vx: (Math.random() - 0.5) * 0.4,
@@ -96,13 +98,13 @@
     }
     function tick() {
       ctx.clearRect(0, 0, W, H);
-      if (parts.length < 46 && Math.random() > 0.3) parts.push(spawn());
+      if (parts.length < cap && Math.random() > 0.3) parts.push(spawn());
       for (var i = parts.length - 1; i >= 0; i--) {
         var p = parts[i];
         p.life++; p.y -= p.vy; p.x += p.vx; p.vx += (Math.random() - 0.5) * 0.06;
         var t = p.life / p.max;
         if (t >= 1) { parts.splice(i, 1); continue; }
-        var a = Math.sin(t * Math.PI) * 0.9;
+        var a = Math.sin(t * Math.PI) * (mode === 'wide' ? 0.65 : 0.9);
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
         ctx.fillStyle = 'hsla(' + p.hue + ',95%,' + (55 + t * 15) + '%,' + a + ')';
@@ -115,5 +117,11 @@
     size();
     window.addEventListener('resize', size);
     requestAnimationFrame(tick);
+  }
+
+  if (!reduce) {
+    var heroCanvas = document.getElementById('embers');
+    if (heroCanvas) initEmbers(heroCanvas, 'center');
+    document.querySelectorAll('.feature__embers').forEach(function (c) { initEmbers(c, 'wide'); });
   }
 })();
